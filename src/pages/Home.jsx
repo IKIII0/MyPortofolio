@@ -159,6 +159,14 @@ const Home = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-2xl opacity-30"></div>
+              
+              {/* Sonar Wave Animations */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full border-2 border-cyan-500/40 animate-sonar-1"></div>
+                <div className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full border-2 border-cyan-400/30 animate-sonar-2"></div>
+                <div className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full border-2 border-blue-500/30 animate-sonar-3"></div>
+              </div>
+              
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
                 <img
                   src="/Rifki.jpeg"
