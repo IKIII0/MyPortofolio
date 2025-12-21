@@ -158,14 +158,13 @@ const Home = () => {
             className="flex justify-center lg:justify-end order-1 lg:order-2"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-2xl opacity-30"></div>
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
                 <img
                   src="/Rifki.jpeg"
                   alt="Rifki Al Sauqy"
                   className="w-full h-full object-cover rounded-full border-4 border-cyan-500/50 shadow-2xl shadow-cyan-500/30"
                 />
-                <div className="absolute inset-0 rounded-full border-4 border-cyan-400/20 animate-ping"></div>
               </div>
             </div>
           </motion.div>

@@ -59,14 +59,14 @@ const Navbar = () => {
           
           <div
             onClick={() => setNav(!nav)}
-            className="cursor-pointer z-10 text-gray-300"
+            className="cursor-pointer z-50 text-gray-300"
           >
             {nav ? <FaTimes size={26} className="sm:w-[30px] sm:h-[30px]" /> : <FaBars size={26} className="sm:w-[30px] sm:h-[30px]" />}
           </div>
         </div>
 
         {nav && (
-          <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-900 text-gray-300">
+          <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-900 text-gray-300 z-40">
             {links.map(({ id, link, name }) => (
               <li
                 key={id}
