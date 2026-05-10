@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       home: 'Beranda',
       about: 'Tentang',
-      products: 'Layanan',
+      products: 'Proyek',
     },
     home: {
       greeting: 'Halo, Saya',
@@ -92,7 +92,7 @@ export const translations = {
     nav: {
       home: 'Home',
       about: 'About',
-      products: 'Products',
+      products: 'Projects',
     },
     home: {
       greeting: "Hello, I'm",
