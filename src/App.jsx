@@ -7,18 +7,22 @@ import './index.css';
 
 function App() {
   return (
-    <LanguageProvider>
-      <Router>
-        <div className="relative min-h-screen bg-[#0f281f]">
+    <Router>
+      <LanguageProvider>
+        <div className="relative min-h-screen bg-forest-dark">
           <Navbar />
           <Routes>
+            {/* English (default) */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Navigate to="/" replace />} />
+            {/* Indonesian */}
+            <Route path="/id" element={<Home />} />
+            <Route path="/id/about" element={<About />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
-      </Router>
-    </LanguageProvider>
+      </LanguageProvider>
+    </Router>
   );
 }
 

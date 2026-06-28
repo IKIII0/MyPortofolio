@@ -1,15 +1,36 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Design tokens — single source of truth (forest / nature)
+   Generates utilities: bg-forest-dark, text-sage, border-sage-light,
+   from-sage, text-cream/70, etc. Use these instead of raw hex.
+   ============================================================ */
+@theme {
+  --color-forest-dark: #0f281f;
+  --color-forest-primary: #1a4d3e;
+  --color-forest-light: #2d5a4a;
+  --color-forest-surface: #1e3d35;
+  --color-sage: #7c9a6b;
+  --color-sage-light: #9ab88a;
+  --color-earth: #8b6f4e;
+  --color-earth-tan: #a08060;
+  --color-cream: #f5f0e6;
+  --color-cream-dark: #e8e0d5;
+
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+}
+
 :root {
-  --forest-dark: #0f281f;
-  --forest-primary: #1a4d3e;
-  --forest-light: #2d5a4a;
-  --sage-primary: #7c9a6b;
-  --sage-light: #9ab88a;
-  --earth-brown: #8b6f4e;
-  --earth-tan: #a08060;
-  --cream: #f5f0e6;
-  --cream-dark: #e8e0d5;
+  /* aliases kept for legacy references */
+  --forest-dark: var(--color-forest-dark);
+  --forest-primary: var(--color-forest-primary);
+  --forest-light: var(--color-forest-light);
+  --sage-primary: var(--color-sage);
+  --sage-light: var(--color-sage-light);
+  --earth-brown: var(--color-earth);
+  --earth-tan: var(--color-earth-tan);
+  --cream: var(--color-cream);
+  --cream-dark: var(--color-cream-dark);
 }
 
 body {
@@ -19,80 +40,179 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-color: var(--forest-dark);
+  color: var(--color-cream-dark);
+  background-color: var(--color-forest-dark);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Display typeface for headings — moves off the Inter default look */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   Reusable component primitives — keep visual language consistent
+   ============================================================ */
+@layer components {
+  /* Elevated surface card — solid tint + hairline border (no glass overload) */
+  .card {
+    background-color: color-mix(in srgb, var(--color-forest-surface) 70%, var(--color-forest-dark));
+    border: 1px solid color-mix(in srgb, var(--color-sage) 14%, transparent);
+    border-radius: 0.75rem; /* rounded-xl */
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .card:hover {
+    border-color: color-mix(in srgb, var(--color-sage-light) 35%, transparent);
+    box-shadow: 0 16px 40px -20px rgb(0 0 0 / 0.5);
+  }
+
+  /* Primary action — solid sage on dark text (one clear accent) */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    color: var(--color-forest-dark);
+    background-color: var(--color-sage);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-sage-light);
+    transform: translateY(-1px);
+  }
+
+  /* Secondary action — outline */
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    color: var(--color-sage-light);
+    border: 1px solid color-mix(in srgb, var(--color-sage) 45%, transparent);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .btn-outline:hover {
+    background-color: color-mix(in srgb, var(--color-sage) 12%, transparent);
+    border-color: var(--color-sage-light);
+    transform: translateY(-1px);
+  }
+
+  /* Small pill (tech tags, badges) */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: var(--color-sage-light);
+    background-color: color-mix(in srgb, var(--color-sage) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-sage) 22%, transparent);
+  }
+
+  /* Square icon tile */
+  .icon-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    color: var(--color-sage-light);
+    background-color: color-mix(in srgb, var(--color-sage) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-sage) 18%, transparent);
+  }
+
+  /* Heading emphasis — solid colours, not AI gradient-clip text.
+     Emphasis comes from one accent within the same type family. */
+  .heading-grad {
+    color: var(--color-cream);
+  }
+  .accent-grad {
+    color: var(--color-sage-light);
+  }
+
+  /* Short accent rule under headings */
+  .accent-rule {
+    height: 3px;
+    width: 4rem;
+    border-radius: 9999px;
+    background-image: linear-gradient(to right, var(--color-sage-light), var(--color-sage));
+  }
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--forest-dark);
+  background: var(--color-forest-dark);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--sage-primary), var(--forest-light));
+  background: linear-gradient(to bottom, var(--color-sage), var(--color-forest-light));
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, var(--sage-light), var(--forest-primary));
+  background: linear-gradient(to bottom, var(--color-sage-light), var(--color-forest-primary));
 }
 
+/* ============================================================
+   Keyframe animations
+   ============================================================ */
 @keyframes sonar {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1.3);
-    opacity: 0;
-  }
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 0; }
 }
+.animate-sonar-1 { animation: sonar 3s ease-out infinite; }
+.animate-sonar-2 { animation: sonar 3s ease-out infinite 1s; }
+.animate-sonar-3 { animation: sonar 3s ease-out infinite 2s; }
 
-.animate-sonar-1 {
-  animation: sonar 3s ease-out infinite;
-}
-
-.animate-sonar-2 {
-  animation: sonar 3s ease-out infinite 1s;
-}
-
-.animate-sonar-3 {
-  animation: sonar 3s ease-out infinite 2s;
-}
-
-/* Nature theme animations */
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(2deg); }
 }
+.animate-float { animation: float 6s ease-in-out infinite; }
 
 @keyframes leaf-sway {
   0%, 100% { transform: rotate(-3deg); }
   50% { transform: rotate(3deg); }
 }
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
 .animate-leaf {
   animation: leaf-sway 4s ease-in-out infinite;
   transform-origin: bottom center;
 }
 
-/* Gradient backgrounds */
+/* ============================================================
+   Gradient / pattern backgrounds
+   ============================================================ */
 .bg-nature-gradient {
-  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-primary) 50%, var(--forest-light) 100%);
+  background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest-primary) 50%, var(--color-forest-light) 100%);
+}
+.bg-leaf-pattern {
+  background-image:
+    radial-gradient(ellipse at top left, color-mix(in srgb, var(--color-sage) 15%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, color-mix(in srgb, var(--color-forest-light) 20%, transparent) 0%, transparent 50%);
 }
 
-.bg-leaf-pattern {
-  background-image: 
-    radial-gradient(ellipse at top left, rgba(124, 154, 107, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(45, 90, 74, 0.2) 0%, transparent 50%);
+/* ============================================================
+   Respect reduced-motion preference
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
