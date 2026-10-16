@@ -63,11 +63,11 @@ const About = () => {
       id: 11,
       title: 'GenBI USU',
       location: language === 'id' ? 'Medan, Indonesia' : 'Medan, Indonesia',
-      role: language === 'id' ? 'Anggota (Generasi Baru Indonesia)' : 'Member (Generasi Baru Indonesia)',
+      role: language === 'id' ? 'Anggota Divisi Kewirausahaan' : 'Entrepreneurship Division Member',
       date: language === 'id' ? '2025 - Saat ini' : '2025 - Present',
       description: language === 'id'
-        ? 'Komunitas penerima Beasiswa Bank Indonesia yang aktif dalam kegiatan sosial dan edukasi.'
-        : 'Community of Bank Indonesia scholarship awardees active in social and educational programs.',
+        ? 'Penerima Beasiswa Bank Indonesia yang aktif di Divisi Kewirausahaan serta kegiatan sosial dan edukasi.'
+        : 'Bank Indonesia scholarship awardee active in the Entrepreneurship Division and in social and educational programs.',
       logo: '/org-genbi.jpg',
       icon: <FaUsers className="w-5 h-5" />,
     },
@@ -76,7 +76,7 @@ const About = () => {
       title: 'Codefest 002',
       location: language === 'id' ? 'Medan, Indonesia' : 'Medan, Indonesia',
       role: language === 'id' ? 'Anggota Divisi Event' : 'Event Division Member',
-      date: language === 'id' ? 'April 2026 - Saat ini' : 'April 2026 - Present',
+      date: language === 'id' ? 'April 2026 - Juli 2026' : 'April 2026 - July 2026',
       description: language === 'id'
         ? 'Menjadi koordinator penanggung jawab lomba Competitive Programming.'
         : 'Coordinator in charge of Competitive Programming competition.',
@@ -87,11 +87,11 @@ const About = () => {
       id: 3,
       title: 'Ilmu Komputer Laboratory Center (IKLC)',
       location: language === 'id' ? 'Medan, Indonesia' : 'Medan, Indonesia',
-      role: language === 'id' ? 'Asistan Laboratorium' : 'Laboratory Assistant',
+      role: language === 'id' ? 'Asisten Laboratorium · Kepala Divisi Manajemen Sumber Daya Asisten' : 'Laboratory Assistant · Head of Assistant Resource Management Division',
       date: language === 'id' ? 'Januari 2026 - Saat ini' : 'January 2026 - Present',
       description: language === 'id'
-        ? 'Mengajar mata kuliah praktikum Probabilitas dan Statistika.'
-        : 'Teaching Probability and Statistics laboratory course.',
+        ? 'Menjadi Kepala Divisi Manajemen Sumber Daya Asisten serta mengajar praktikum Probabilitas dan Statistika, Dasar Pemrograman, dan Basis Data.'
+        : 'Head of the Assistant Resource Management Division, teaching Probability and Statistics, Fundamentals of Programming, and Database laboratory courses.',
       logo: '/org-iklc.jpg',
       icon: <FaChalkboardTeacher className="w-5 h-5" />,
     },
@@ -100,7 +100,7 @@ const About = () => {
       title: 'Imagine Cup 2026',
       location: language === 'id' ? 'Global' : 'Global',
       role: language === 'id' ? 'Semifinalis' : 'Semifinalist',
-      date: language === 'id' ? 'Januari 2026 - Saat ini' : 'January 2026 - Present',
+      date: language === 'id' ? 'Januari 2026 - Mei 2026' : 'January 2026 - May 2026',
       description: language === 'id'
         ? 'Mencapai semifinalis dalam lomba Microsoft Imagine Cup 2026 skala dunia.'
         : 'Reached semifinals in Microsoft Imagine Cup 2026 global competition.',
@@ -112,7 +112,7 @@ const About = () => {
       title: 'Unit Kegiatan Mahasiswa Islam Al-Khuwarizmi (UKMI)',
       location: language === 'id' ? 'Medan, Indonesia' : 'Medan, Indonesia',
       role: language === 'id' ? 'Anggota Divisi Keilmuan' : 'Academic Division Member',
-      date: language === 'id' ? 'September 2025 - Saat ini' : 'September 2025 - Present',
+      date: language === 'id' ? 'September 2025 - September 2026' : 'September 2025 - September 2026',
       description: language === 'id'
         ? 'Memberikan info terkait lomba, beasiswa, dan membantu mahasiswa Ilmu Komputer USU.'
         : 'Providing info on competitions, scholarships, and helping Computer Science students.',
@@ -123,11 +123,23 @@ const About = () => {
       id: 6,
       title: 'Ikatan Mahasiswa Ilmu Komputer (IMILKOM)',
       location: language === 'id' ? 'Medan, Indonesia' : 'Medan, Indonesia',
-      role: language === 'id' ? 'Anggota Departemen Wawasan Kontemporer' : 'Contemporary Insights Department Member',
-      date: language === 'id' ? 'Agustus 2025 - Saat ini' : 'August 2025 - Present',
+      role: language === 'id' ? 'Kepala Departemen Wawasan Kontemporer' : 'Head of Contemporary Insights Department',
+      date: language === 'id' ? 'September 2026 - Saat ini' : 'September 2026 - Present',
       description: language === 'id'
-        ? 'Memberikan bantuan pengajaran ilmu jika ada kesulahan dalam mata kuliah.'
-        : 'Providing teaching assistance for students struggling with coursework.',
+        ? 'Memimpin departemen yang berfokus pada perkembangan wawasan dan isu kontemporer di lingkungan Ilmu Komputer USU.'
+        : 'Leading the department focused on contemporary insights and current issues within Computer Science at USU.',
+      logo: '/org-imilkom.jpg',
+      icon: <FaUsers className="w-5 h-5" />,
+    },
+    {
+      id: 10,
+      title: 'Ikatan Mahasiswa Ilmu Komputer (IMILKOM)',
+      location: language === 'id' ? 'Medan, Indonesia' : 'Medan, Indonesia',
+      role: language === 'id' ? 'Anggota Departemen Wawasan Kontemporer' : 'Contemporary Insights Department Member',
+      date: language === 'id' ? 'Agustus 2025 - September 2026' : 'August 2025 - September 2026',
+      description: language === 'id'
+        ? 'Memberikan bantuan pengajaran ilmu jika ada yang kesulitan dalam mata kuliah prodi Ilmu Komputer.'
+        : 'Providing teaching assistance for students struggling with Computer Science coursework.',
       logo: '/org-imilkom.jpg',
       icon: <FaUsers className="w-5 h-5" />,
     },

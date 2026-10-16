@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaServer, FaBrain, FaRocket, FaLeaf, FaSeedling, FaTree, FaMicrophone, FaPuzzlePiece, FaUsers, FaClock, FaCamera, FaMousePointer, FaSun, FaEye, FaArrowRight } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaServer, FaBrain, FaRocket, FaLeaf, FaSeedling, FaTree, FaMicrophone, FaPuzzlePiece, FaUsers, FaClock, FaCamera, FaMousePointer, FaSun, FaEye, FaArrowRight, FaHeartbeat, FaWallet, FaTools, FaCar, FaGamepad } from 'react-icons/fa';
 import { SiPytorch, SiCplusplus } from 'react-icons/si';
 import { GiTreeBranch, GiPlantSeed, GiFlowerEmblem } from 'react-icons/gi';
 import Typewriter from 'typewriter-effect';
@@ -73,6 +73,58 @@ const Home = () => {
   // image: null -> card renders an icon header instead of a broken <img>
   const portfolioProjects = [
     {
+      id: 9,
+      title: 'Cees Rent Car',
+      role: language === 'id' ? 'Web Developer' : 'Web Developer',
+      date: 'Oktober 2026',
+      description: language === 'id'
+        ? 'Website rental mobil lepas kunci maupun dengan driver untuk area Banda Aceh dan sekitarnya'
+        : 'Car rental website offering self-drive and with-driver options for Banda Aceh and surrounding areas',
+      image: '/ceesrentcar.png',
+      tech: ['React', 'TailwindCSS', 'Node.js'],
+      link: '#',
+      icon: <FaCar />,
+    },
+    {
+      id: 10,
+      title: 'Telehealt',
+      role: language === 'id' ? 'Mobile Developer' : 'Mobile Developer',
+      date: 'Agustus 2026',
+      description: language === 'id'
+        ? 'Aplikasi pemantauan kesehatan mandiri untuk pasien pasca-rawat inap atau pengelolaan penyakit kronis seperti diabetes dan hipertensi'
+        : 'Self-monitoring health app for post-hospitalization patients or chronic disease management such as diabetes and hypertension',
+      image: null,
+      tech: ['React Native', 'Node.js', 'PostgreSQL'],
+      link: 'https://drive.google.com/file/d/1iBvb40cg_Qy6ViZ1_vMARBvWa_lmK41g/view?usp=sharing',
+      icon: <FaHeartbeat />,
+    },
+    {
+      id: 11,
+      title: 'Verifact',
+      role: language === 'id' ? 'Mobile Developer' : 'Mobile Developer',
+      date: 'Agustus 2026',
+      description: language === 'id'
+        ? 'Aplikasi pendamping boardgame untuk meningkatkan literasi, terutama bagi anak-anak'
+        : 'Boardgame companion app to improve literacy, especially for children',
+      image: null,
+      tech: ['React Native', 'Node.js'],
+      link: 'https://drive.google.com/file/d/1-Tgg_mO-MEUJxsKWi4cnEG6XV_Oaf9VV/view?usp=sharing',
+      icon: <FaGamepad />,
+    },
+    {
+      id: 12,
+      title: 'Saku',
+      role: language === 'id' ? 'Mobile Developer' : 'Mobile Developer',
+      date: 'Juli 2026',
+      description: language === 'id'
+        ? 'Aplikasi sederhana untuk manajemen keuangan pribadi'
+        : 'Simple personal finance management app',
+      image: null,
+      tech: ['React Native', 'Node.js', 'PostgreSQL'],
+      link: 'https://drive.google.com/file/d/1gxpDIHBkfbLADUWQgN-x1qXp1Zv5xr44/view?usp=sharing',
+      icon: <FaWallet />,
+    },
+    {
       id: 1,
       title: 'ConvertMee',
       role: language === 'id' ? 'Web Developer' : 'Web Developer',
@@ -86,17 +138,17 @@ const Home = () => {
       icon: <FaRocket />,
     },
     {
-      id: 2,
-      title: 'Nexfora',
-      role: language === 'id' ? 'Web Developer' : 'Web Developer',
-      date: 'Maret 2025',
+      id: 13,
+      title: 'Teknisio',
+      role: language === 'id' ? 'Mobile Developer' : 'Mobile Developer',
+      date: 'April 2026',
       description: language === 'id'
-        ? 'Platform pemesanan jasa dan kelas online dengan berbagai kategori pembelajaran'
-        : 'Service and online class booking platform with various learning categories',
-      image: '/Nexfora.png',
-      tech: ['React', 'TailwindCSS', 'Node.js', 'PostgreSQL'],
-      link: 'https://nexfora.vercel.app/',
-      icon: <GiTreeBranch />,
+        ? 'Aplikasi pemesanan jasa tukang dan perbaikan alat rumah tangga'
+        : 'Booking app for home repair and handyman services',
+      image: null,
+      tech: ['React Native', 'Node.js', 'PostgreSQL'],
+      link: 'https://github.com/Doni-15/Teknisio.git',
+      icon: <FaTools />,
     },
     {
       id: 3,
@@ -121,7 +173,7 @@ const Home = () => {
         : 'Application to find photo studio partners near user location',
       image: null,
       tech: ['React Native', 'Node.js', 'PostgreSQL'],
-      link: '#',
+      link: 'https://drive.google.com/file/d/1x-5_KMBha3sVaYDU1tppn7Hf2GLvP6ij/view?usp=sharing',
       icon: <FaCamera />,
     },
     {
@@ -136,6 +188,19 @@ const Home = () => {
       tech: ['Python', 'TensorFlow', 'Scikit-learn'],
       link: '#',
       icon: <FaBrain />,
+    },
+    {
+      id: 2,
+      title: 'Nexfora',
+      role: language === 'id' ? 'Web Developer' : 'Web Developer',
+      date: 'Maret 2025',
+      description: language === 'id'
+        ? 'Platform pemesanan jasa dan kelas online dengan berbagai kategori pembelajaran'
+        : 'Service and online class booking platform with various learning categories',
+      image: '/Nexfora.png',
+      tech: ['React', 'TailwindCSS', 'Node.js', 'PostgreSQL'],
+      link: 'https://nexfora.vercel.app/',
+      icon: <GiTreeBranch />,
     },
     {
       id: 6,

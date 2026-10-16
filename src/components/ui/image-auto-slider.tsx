@@ -8,7 +8,9 @@ export const Component = () => {
     "/Sertifikat Belajar Dasar Data Science.png",
     "/Sertifikat_Python.png",
     "/Sertifikat_MachineLearning.png",
-    "/3rd Best Project in Web Pathway GDGoC USU.png"
+    "/Sertifikat_SFT_2026.png",
+    "/3rd Best Project in Web Pathway GDGoC USU.png",
+    "/1st Best Project in Android Mobile Programming Pathway.png"
   ];
 
   // Duplicate images for seamless loop
